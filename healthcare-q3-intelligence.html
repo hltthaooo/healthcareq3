@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vietnam Healthcare Vertical – Q3 Marketing Intelligence 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:   #0A2540;
+    --navy-mid: #163558;
+    --teal:   #0D9488;
+    --teal-light: #14B8A8;
+    --sky:    #E8F4F8;
+    --sky-dark: #C9E4EF;
+    --amber:  #F59E0B;
+    --amber-light: #FEF3C7;
+    --white:  #FFFFFF;
+    --text:   #1E293B;
+    --muted:  #64748B;
+    --border: #E2E8F0;
+    --red-soft: #FEE2E2;
+    --red:    #DC2626;
+    --green-soft: #D1FAE5;
+    --green:  #059669;
+    --radius: 12px;
+    --shadow: 0 4px 24px rgba(10,37,64,0.10);
+    --shadow-hover: 0 8px 36px rgba(10,37,64,0.18);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--sky);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,37,64,0.97);
+    backdrop-filter: blur(8px);
+    padding: 0 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 58px;
+    border-bottom: 2px solid var(--teal);
+  }
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    color: var(--white); font-size: 1rem; font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .nav-brand span { color: var(--teal-light); }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.72); font-size: 0.8rem; font-weight: 500;
+    text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--teal-light); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #0e4a6e 100%);
+    padding: 72px 40px 56px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230D9488' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-inner { max-width: 960px; margin: 0 auto; position: relative; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(13,148,136,0.18); border: 1px solid rgba(13,148,136,0.4);
+    color: var(--teal-light); font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 20px; margin-bottom: 20px;
+  }
+  .hero-eyebrow::before { content: '◉'; font-size: 0.6rem; animation: pulse-dot 2s infinite; }
+  @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white); font-size: clamp(1.9rem, 4vw, 2.8rem);
+    font-weight: 700; line-height: 1.25; margin-bottom: 16px;
+  }
+  .hero h1 em { color: var(--teal-light); font-style: normal; }
+  .hero-sub {
+    color: rgba(255,255,255,0.65); font-size: 0.95rem; max-width: 620px;
+    margin-bottom: 36px;
+  }
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 16px; max-width: 720px;
+  }
+  .hero-stat {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.13);
+    border-radius: var(--radius); padding: 18px 20px;
+    transition: background .25s;
+  }
+  .hero-stat:hover { background: rgba(255,255,255,0.12); }
+  .hero-stat .val {
+    font-family: 'Playfair Display', serif;
+    color: var(--teal-light); font-size: 1.8rem; font-weight: 700; line-height: 1;
+  }
+  .hero-stat .lbl { color: rgba(255,255,255,0.6); font-size: 0.75rem; margin-top: 4px; }
+
+  /* ── PULSE LINE ── */
+  .pulse-divider {
+    width: 100%; height: 48px; overflow: hidden;
+    background: var(--sky);
+  }
+  .pulse-divider svg { width: 100%; height: 100%; }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 28px; }
+  section { padding: 56px 0; }
+  section + section { border-top: 1px solid var(--border); }
+
+  .section-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--teal); font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .section-label::before { content: ''; display: block; width: 20px; height: 2px; background: var(--teal); border-radius: 2px; }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy); font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 700; margin-bottom: 10px; line-height: 1.3;
+  }
+  .section-intro { color: var(--muted); max-width: 680px; margin-bottom: 32px; }
+
+  /* ── ALERT/TL;DR ── */
+  .tldr-box {
+    background: var(--navy);
+    border-radius: var(--radius); padding: 28px 32px; margin-bottom: 40px;
+    border-left: 4px solid var(--teal);
+    position: relative; overflow: hidden;
+  }
+  .tldr-box::after {
+    content: 'TL;DR';
+    position: absolute; right: 24px; top: 20px;
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em;
+    color: rgba(255,255,255,0.18);
+  }
+  .tldr-box h3 { color: var(--teal-light); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+  .tldr-box ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .tldr-box li { color: rgba(255,255,255,0.85); font-size: 0.9rem; padding-left: 20px; position: relative; }
+  .tldr-box li::before { content: '→'; position: absolute; left: 0; color: var(--teal-light); font-weight: 700; }
+
+  /* ── CARDS ── */
+  .card-grid { display: grid; gap: 18px; }
+  .card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .card-grid-3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .card {
+    background: var(--white); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: 24px;
+    border: 1px solid var(--border);
+    transition: transform .25s, box-shadow .25s;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+  .card-tag {
+    display: inline-block; font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px; margin-bottom: 12px;
+  }
+  .tag-pharma { background: #EDE9FE; color: #6D28D9; }
+  .tag-hospital { background: var(--green-soft); color: var(--green); }
+  .tag-mnc { background: #DBEAFE; color: #1D4ED8; }
+  .tag-hybrid { background: var(--amber-light); color: #92400E; }
+  .card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .card .rev { font-size: 0.82rem; color: var(--teal); font-weight: 600; margin-bottom: 8px; }
+  .card p { font-size: 0.84rem; color: var(--muted); line-height: 1.6; }
+  .card .brands { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .brand-pill {
+    background: var(--sky); color: var(--navy-mid);
+    font-size: 0.72rem; font-weight: 600; padding: 3px 10px;
+    border-radius: 20px; border: 1px solid var(--sky-dark);
+  }
+
+  /* ── STAT CALLOUTS ── */
+  .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 28px 0; }
+  .stat-card {
+    background: var(--white); border-radius: var(--radius);
+    padding: 20px; text-align: center;
+    border-top: 3px solid var(--teal);
+    box-shadow: var(--shadow);
+  }
+  .stat-card .big { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--navy); font-weight: 700; line-height: 1; }
+  .stat-card .unit { font-size: 0.9rem; color: var(--teal); font-weight: 600; }
+  .stat-card .desc { font-size: 0.77rem; color: var(--muted); margin-top: 6px; }
+
+  /* ── Q3 TIMELINE ── */
+  .timeline { position: relative; padding-left: 32px; margin-top: 8px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 10px; top: 8px; bottom: 8px;
+    width: 2px; background: linear-gradient(to bottom, var(--teal), var(--amber));
+    border-radius: 2px;
+  }
+  .tl-item { position: relative; margin-bottom: 28px; }
+  .tl-dot {
+    position: absolute; left: -26px; top: 4px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--teal); border: 2.5px solid var(--white);
+    box-shadow: 0 0 0 3px rgba(13,148,136,0.25);
+  }
+  .tl-dot.amber { background: var(--amber); box-shadow: 0 0 0 3px rgba(245,158,11,0.25); }
+  .tl-dot.red { background: var(--red); box-shadow: 0 0 0 3px rgba(220,38,38,0.2); }
+  .tl-month {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 4px;
+  }
+  .tl-month.amber { color: var(--amber); }
+  .tl-month.red { color: var(--red); }
+  .tl-title { font-weight: 700; color: var(--navy); font-size: 0.95rem; margin-bottom: 4px; }
+  .tl-desc { font-size: 0.84rem; color: var(--muted); }
+
+  /* ── CHANNEL TABLE ── */
+  .channel-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  .channel-table thead { background: var(--navy); }
+  .channel-table thead th { color: var(--white); padding: 14px 16px; text-align: left; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.05em; }
+  .channel-table tbody tr { background: var(--white); border-bottom: 1px solid var(--border); transition: background .15s; }
+  .channel-table tbody tr:hover { background: var(--sky); }
+  .channel-table tbody td { padding: 12px 16px; vertical-align: top; }
+  .channel-table tbody td:first-child { font-weight: 600; color: var(--navy); }
+  .dot-high { color: var(--teal); font-size: 1.1rem; }
+  .dot-med { color: var(--amber); font-size: 1.1rem; }
+  .dot-low { color: #CBD5E1; font-size: 1.1rem; }
+
+  /* ── BUDGET SECTION ── */
+  .budget-bars { display: flex; flex-direction: column; gap: 18px; margin-top: 20px; }
+  .budget-item {}
+  .budget-label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+  .budget-name { font-size: 0.88rem; font-weight: 600; color: var(--navy); }
+  .budget-range { font-size: 0.8rem; color: var(--teal); font-weight: 700; }
+  .budget-bar-wrap { background: var(--sky-dark); border-radius: 6px; height: 10px; overflow: hidden; }
+  .budget-bar { height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--teal), var(--teal-light)); transition: width 1s ease; }
+  .budget-note { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+
+  /* ── REGULATORY BOX ── */
+  .reg-box {
+    background: linear-gradient(135deg, #FFF7ED 0%, #FFFBEB 100%);
+    border: 1.5px solid var(--amber);
+    border-radius: var(--radius); padding: 24px 28px;
+    margin: 28px 0;
+  }
+  .reg-box h4 { color: #92400E; font-size: 0.88rem; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .reg-box ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .reg-box li { font-size: 0.85rem; color: #78350F; padding-left: 18px; position: relative; }
+  .reg-box li::before { content: '⚠'; position: absolute; left: 0; font-size: 0.75rem; }
+
+  /* ── RECOMMENDATIONS ── */
+  .reco-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  .reco-card {
+    background: var(--white); border-radius: var(--radius);
+    padding: 22px; border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .reco-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem; font-weight: 700;
+    color: var(--sky-dark); line-height: 1;
+  }
+  .reco-card h4 { font-size: 0.92rem; font-weight: 700; color: var(--navy); line-height: 1.4; }
+  .reco-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+  .reco-chip {
+    display: inline-block; font-size: 0.68rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.07em;
+    padding: 3px 10px; border-radius: 20px;
+    background: var(--green-soft); color: var(--green);
+  }
+
+  /* ── SOURCES ── */
+  .sources-list { list-style: none; display: flex; flex-direction: column; gap: 8px; counter-reset: src; }
+  .sources-list li {
+    counter-increment: src;
+    font-size: 0.8rem; color: var(--muted);
+    padding-left: 28px; position: relative;
+  }
+  .sources-list li::before {
+    content: counter(src);
+    position: absolute; left: 0;
+    background: var(--sky-dark); color: var(--navy-mid);
+    font-weight: 700; font-size: 0.68rem;
+    width: 18px; height: 18px; display: flex; align-items: center; justify-content: center;
+    border-radius: 4px; top: 1px;
+  }
+  .sources-list a { color: var(--teal); text-decoration: none; }
+  .sources-list a:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy); color: rgba(255,255,255,0.45);
+    text-align: center; padding: 28px;
+    font-size: 0.78rem; line-height: 1.8;
+  }
+  footer strong { color: rgba(255,255,255,0.7); }
+
+  /* ── BADGE ── */
+  .segment-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
+    padding: 4px 12px; border-radius: 20px;
+  }
+  .sb-otc { background: #EDE9FE; color: #6D28D9; }
+  .sb-rx  { background: #DBEAFE; color: #1D4ED8; }
+  .sb-hosp { background: var(--green-soft); color: var(--green); }
+
+  /* ── CAVEAT ── */
+  .caveat {
+    background: var(--sky); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 22px; margin-top: 32px;
+    font-size: 0.8rem; color: var(--muted);
+  }
+  .caveat strong { color: var(--navy); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 680px) {
+    nav { padding: 0 18px; }
+    .nav-links { display: none; }
+    .hero { padding: 48px 18px 40px; }
+    .container { padding: 0 18px; }
+    section { padding: 40px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Healthcare <span>Intelligence</span></div>
+  <ul class="nav-links">
+    <li><a href="#thi-truong">Thị trường</a></li>
+    <li><a href="#pharma">Pharma</a></li>
+    <li><a href="#benh-vien">Bệnh viện</a></li>
+    <li><a href="#q3">Mùa Q3</a></li>
+    <li><a href="#kenh">Kênh & Budget</a></li>
+    <li><a href="#approach">Approach</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Vietnam Healthcare Vertical · Q3 2025</div>
+    <h1>Marketing Intelligence<br><em>ngành Healthcare & Pharma</em><br>cho BD Approach Q3</h1>
+    <p class="hero-sub">Research tổng hợp về nhu cầu MKT, xu hướng campaign, budget ước tính và cơ hội approach của vertical Healthcare – gồm cả pharma brands và bệnh viện tư lớn tại Việt Nam.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="val">$7.9B</div>
+        <div class="lbl">Quy mô thị trường pharma VN 2024</div>
+      </div>
+      <div class="hero-stat">
+        <div class="val">9.3%</div>
+        <div class="lbl">CAGR đến 2032 (Fortune Business Insights)</div>
+      </div>
+      <div class="hero-stat">
+        <div class="val">+136%</div>
+        <div class="lbl">Sốt xuất huyết TPHCM vs cùng kỳ 2024</div>
+      </div>
+      <div class="hero-stat">
+        <div class="val">3</div>
+        <div class="lbl">Nhóm target khác nhau, 3 pitch khác nhau</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PULSE DIVIDER -->
+<div class="pulse-divider">
+  <svg viewBox="0 0 1200 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 24 L200 24 L220 8 L240 40 L260 8 L280 40 L300 24 L520 24 L540 4 L560 44 L580 4 L600 24 L900 24 L920 12 L940 36 L960 24 L1200 24"
+      fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      opacity="0.6"/>
+    <path d="M0 32 L400 32 L420 24 L440 38 L460 24 L1200 32"
+      fill="none" stroke="#14B8A8" stroke-width="1" opacity="0.3"/>
+  </svg>
+</div>
+
+<!-- SECTION: TÓM TẮT -->
+<section id="thi-truong">
+  <div class="container">
+    <div class="section-label">Tổng quan</div>
+    <h2>Tại sao Healthcare là vertical đáng pitch nhất Q3?</h2>
+    <p class="section-intro">Ba yếu tố hội tụ đúng tháng 7–9: đỉnh mùa bệnh rainy season, back-to-school checkup rush, và hai triển lãm lớn nhất ngành tại TPHCM – đây là window ngân sách MKT mở rộng nhất trong năm.</p>
+
+    <div class="tldr-box">
+      <h3>3 điều cần nhớ trước khi approach</h3>
+      <ul>
+        <li><strong>Q3 = đỉnh ngân sách MKT healthcare:</strong> mùa sốt xuất huyết, dengue, back-to-school và 2 expo lớn (Medi-Pharm 31/7–2/8 và Pharmedi 24–27/9 tại TPHCM) tạo ra demand thật sự cho campaign MKT.</li>
+        <li><strong>3 nhóm target, 3 pitch hoàn toàn khác nhau:</strong> OTC pharma cần performance + KOL + Zalo CRM; bệnh viện tư cần lead gen + booking funnel + doctor-KOL content; MNC Rx dùng kênh HCP và corporate branding vì quảng cáo thuốc kê đơn ra công chúng là bất hợp pháp.</li>
+        <li><strong>Luật Quảng cáo sửa đổi (hiệu lực 1/1/2026) là lý do "cấp bách" để pitch ngay:</strong> cá nhân KOL/KOC bị quy trách nhiệm cá nhân, có rule xoá nội dung trong 24h – các brand cần agency hiểu compliance trước deadline.</li>
+      </ul>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="big">$7.94B</div>
+        <div class="unit">USD · 2024</div>
+        <div class="desc">Quy mô thị trường pharma VN (Fortune BI)</div>
+      </div>
+      <div class="stat-card">
+        <div class="big">$16B</div>
+        <div class="unit">USD · 2032</div>
+        <div class="desc">Dự báo tăng trưởng đến 2032 (CAGR 9.3%)</div>
+      </div>
+      <div class="stat-card">
+        <div class="big">+30%</div>
+        <div class="unit">2019 → 2023</div>
+        <div class="desc">Tăng trưởng lượt khám bệnh viện tư</div>
+      </div>
+      <div class="stat-card">
+        <div class="big">25%</div>
+        <div class="unit">Mục tiêu 2050</div>
+        <div class="desc">Tỷ lệ giường bệnh tư nhân (hiện ~10%)</div>
+      </div>
+      <div class="stat-card">
+        <div class="big">$4.94B</div>
+        <div class="unit">USD · 2025</div>
+        <div class="desc">Tổng chi tiêu quảng cáo digital VN</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: PHARMA -->
+<section id="pharma">
+  <div class="container">
+    <div class="section-label">Pharma Brands</div>
+    <h2>Các công ty pharma lớn cần approach</h2>
+    <p class="section-intro">Chia thành 3 nhóm rõ ràng – domestic OTC, MNC consumer và MNC Rx. Mỗi nhóm có nhu cầu MKT và cơ chế budget khác nhau hoàn toàn.</p>
+
+    <div class="card-grid card-grid-2">
+      <div class="card">
+        <span class="card-tag tag-pharma">Domestic OTC · Chi mạnh nhất</span>
+        <h3>Traphaco</h3>
+        <div class="rev">Doanh thu ~2,300 tỷ VND (2024)</div>
+        <p>Advertiser tích cực nhất trong nhóm listed – chi ~170–190 tỷ VND/năm cho quảng cáo (~7–8% revenue). Flagship brands: Boganic, Cebraton, Hoạt huyết dưỡng não, Bexita (tiểu đường – launch mới). Đang push mạnh sang tân dược song song với dòng thảo dược.</p>
+        <div class="brands">
+          <span class="brand-pill">Boganic</span>
+          <span class="brand-pill">Cebraton</span>
+          <span class="brand-pill">Hoạt huyết dưỡng não</span>
+          <span class="brand-pill">Bexita</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-pharma">Domestic OTC · Thận trọng</span>
+        <h3>Dược Hậu Giang (DHG)</h3>
+        <div class="rev">Doanh thu 4,885 tỷ VND (2024)</div>
+        <p>#1 domestic pharma theo doanh thu. Taisho (Nhật) nắm 51%. Chi selling expense ~16–18% revenue nhưng quảng cáo đại chúng khá kín đáo, ưu tiên incentive program cho nhà thuốc và kênh bán hàng. OTC brands mạnh: Hapacol, NattoEnzym, Bocalex.</p>
+        <div class="brands">
+          <span class="brand-pill">Hapacol</span>
+          <span class="brand-pill">NattoEnzym</span>
+          <span class="brand-pill">Bocalex</span>
+          <span class="brand-pill">Alfe</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-pharma">Domestic · ETC-focused</span>
+        <h3>Imexpharm</h3>
+        <div class="rev">Doanh thu 2,205 tỷ VND (2024) – kỷ lục</div>
+        <p>Tăng trưởng nhanh nhất, ETC (thuốc kê đơn bệnh viện) chiếm tỷ trọng lớn – ETC revenue tăng 56% năm 2024. 12 dây chuyền EU-GMP. SK Group (Hàn Quốc) là cổ đông chiến lược. Khó pitch qua mass media, cần HCP/pharma-rep channels.</p>
+        <div class="brands">
+          <span class="brand-pill">Kháng sinh EU-GMP</span>
+          <span class="brand-pill">Tim mạch</span>
+          <span class="brand-pill">Tiêu hóa</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-hybrid">Hybrid Pharma-Retail · Ngôi sao</span>
+        <h3>VNVC (Hệ thống Tiêm chủng)</h3>
+        <div class="rev">220+ trung tâm tiêm chủng toàn quốc</div>
+        <p>Đối tác của GSK, Pfizer, Sanofi, MSD, Takeda, Abbott, AstraZeneca. Vừa launch vaccine dengue, zona, RSV thế hệ mới (12/2025). Groundbreaking nhà máy vaccine liên doanh Sanofi–VNVC (5/2025 tại Long An, vốn 2,000 tỷ VND). <strong>Target A-list</strong> cho performance MKT + content.</p>
+        <div class="brands">
+          <span class="brand-pill">Vaccine dengue</span>
+          <span class="brand-pill">RSV</span>
+          <span class="brand-pill">Zona thần kinh</span>
+          <span class="brand-pill">Hexaxim 6-in-1</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-mnc">MNC Consumer · Tiếp cận được</span>
+        <h3>Sanofi, Abbott, GSK Vietnam</h3>
+        <div class="rev">Budget không công khai – ước tính lớn hơn domestic</div>
+        <p>Consumer-health arm (không phải Rx) có thể pitch mass media. Sanofi đang rất active với JV VNVC. Abbott liên kết Domesco. GSK tiêm chủng + consumer health (Sensodyne, Voltaren, Centrum). Channel ưu tiên: VNVC partnership + digital + pharmacy chain.</p>
+        <div class="brands">
+          <span class="brand-pill">Sanofi × VNVC</span>
+          <span class="brand-pill">Sensodyne</span>
+          <span class="brand-pill">Voltaren</span>
+          <span class="brand-pill">Centrum</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-mnc">MNC Rx · Không pitch public ads</span>
+        <h3>AstraZeneca, Novartis, Pfizer, Roche</h3>
+        <div class="rev">Hạn chế hoàn toàn quảng cáo thuốc Rx ra công chúng</div>
+        <p>Theo pháp luật VN, quảng cáo thuốc kê đơn đến người tiêu dùng là bất hợp pháp. Pitch phải xoay sang: HCP marketing (content cho bác sĩ), tài trợ hội nghị y khoa, corporate branding và disease awareness campaigns (không nêu tên thuốc).</p>
+        <div class="brands">
+          <span class="brand-pill">HCP channels</span>
+          <span class="brand-pill">Medical congress</span>
+          <span class="brand-pill">Disease awareness</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: BỆNH VIỆN -->
+<section id="benh-vien">
+  <div class="container">
+    <div class="section-label">Bệnh viện & Phòng khám tư</div>
+    <h2>Các hệ thống bệnh viện lớn cần approach</h2>
+    <p class="section-intro">Private hospital sector đang tăng trưởng mạnh, đầu tư lớn vào content và digital marketing để cạnh tranh thu hút bệnh nhân và xây dựng thương hiệu bác sĩ chuyên gia.</p>
+
+    <div class="card-grid card-grid-2">
+      <div class="card">
+        <span class="card-tag tag-hospital">Hệ thống · Premium</span>
+        <h3>Vinmec (Vingroup)</h3>
+        <div class="rev">Doanh thu 4,480 tỷ VND (2022, +53% YoY)</div>
+        <p>9 bệnh viện + 4 phòng khám, JCI-accredited, kết nối Cleveland Clinic. Đầu tư nặng vào brand films, podcast bác sĩ ("Chạm hạnh phúc" – Dr. Nguyễn Trung Nghĩa đạt triệu view). Đang xây flagship mới ở Cần Giờ. Focus: sản khoa, nhi, tim mạch.</p>
+        <div class="brands"><span class="brand-pill">Brand films</span><span class="brand-pill">Doctor podcast</span><span class="brand-pill">YouTube</span></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-hospital">Social Media Leader · TikTok</span>
+        <h3>Bệnh viện Tâm Anh</h3>
+        <div class="rev">Top TikTok engagement trong nhóm bệnh viện (2024)</div>
+        <p>TikTok/short-video leader – một video >1.5M view với storytelling fear-based health content. Cùng VNVC về chủ sở hữu (Ngô Chí Dũng). Partnership với GE HealthCare AI (5/2024). Mạnh về IVF, tim mạch, nhi. <strong>Target A-list</strong> cho TikTok + performance.</p>
+        <div class="brands"><span class="brand-pill">TikTok</span><span class="brand-pill">IVF content</span><span class="brand-pill">AI Health</span></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-hospital">International · Expat + Insured</span>
+        <h3>FV Hospital</h3>
+        <div class="rev">Thomson Medical mua lại $381.4M (2023)</div>
+        <p>Largest SEA healthcare M&A since 2020. YouTube leader với expert/complex-case content. Target: expat + bệnh nhân có bảo hiểm quốc tế. Focus cao cấp, content chuyên sâu bằng cả tiếng Anh và tiếng Việt. Budget lớn nhưng selective.</p>
+        <div class="brands"><span class="brand-pill">YouTube</span><span class="brand-pill">English content</span><span class="brand-pill">Insurance</span></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-hospital">Hệ thống · Lớn nhất VN</span>
+        <h3>Hoàn Mỹ (Clermont Group)</h3>
+        <div class="rev">14 bệnh viện + 6 phòng khám trên toàn quốc</div>
+        <p>Mạng lưới lớn nhất VN. Budget phân tán theo từng cơ sở. Chiến lược MKT lean về local targeting + Google Maps + SEO + Zalo OA. Không có TikTok presence mạnh. Cơ hội lớn ở digital performance cho appointment booking.</p>
+        <div class="brands"><span class="brand-pill">Google Maps</span><span class="brand-pill">SEO</span><span class="brand-pill">Local ads</span></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-hospital">Sản khoa · Brand Films</span>
+        <h3>Hồng Ngọc & Thu Cúc</h3>
+        <div class="rev">Mạnh về sản phụ khoa và thẩm mỹ y tế</div>
+        <p>Hồng Ngọc nổi tiếng với brand film viral (5.4M view). Thu Cúc có lợi thế về phẫu thuật thẩm mỹ + sản khoa, active trên Facebook + YouTube. Cả hai đang tăng investment vào TikTok và doctor-KOL content.</p>
+        <div class="brands"><span class="brand-pill">Brand films</span><span class="brand-pill">Doctor KOL</span><span class="brand-pill">Facebook</span></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-hospital">Diagnostics & Clinic Chain</span>
+        <h3>MEDLATEC, CarePlus, City IH</h3>
+        <div class="rev">Phòng khám + xét nghiệm + tầm soát bệnh</div>
+        <p>MEDLATEC chuyên xét nghiệm tại nhà + đặt lịch online – cần SEO, SEM và Zalo booking funnel mạnh. CarePlus: clinic chain đa chuyên khoa. City International Hospital: high-end tại TPHCM. Cả 3 đều cần lead gen + patient acquisition.</p>
+        <div class="brands"><span class="brand-pill">Zalo OA</span><span class="brand-pill">Booking funnel</span><span class="brand-pill">SEO/SEM</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: Q3 TIMELINE -->
+<section id="q3">
+  <div class="container">
+    <div class="section-label">Seasonality Q3</div>
+    <h2>Tại sao Q3 là thời điểm vàng approach Healthcare?</h2>
+    <p class="section-intro">Từ tháng 7 đến tháng 9, ba trigger lớn cộng hưởng khiến ngân sách MKT của toàn ngành healthcare được mở và giải ngân nhanh.</p>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+      <div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot red"></div>
+            <div class="tl-month red">Tháng 6–8 · Rainy Season Peak</div>
+            <div class="tl-title">Mùa sốt xuất huyết & bệnh hô hấp</div>
+            <div class="tl-desc">TPHCM ghi nhận 7,398 ca sốt xuất huyết từ 1/1–11/5/2025, tăng <strong>136%</strong> so với cùng kỳ 2024. Miền Nam chiếm 70–80% ca toàn quốc. Trigger lớn cho vaccine (VNVC), thuốc OTC, dung dịch sát khuẩn và campaign awareness bệnh viện.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-month">31/7–2/8 · SECC TPHCM</div>
+            <div class="tl-title">Vietnam Medi-Pharm Expo 2025</div>
+            <div class="tl-desc">450+ exhibitors từ 22 quốc gia. Đây là thời điểm brand pharma và hospital group chi ngân sách activation + B2B networking. Agency cần có mặt hoặc có case study liên quan.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot amber"></div>
+            <div class="tl-month amber">Tháng 8–9 · Back-to-School</div>
+            <div class="tl-title">Rush khám sức khoẻ học đường & tiêm chủng</div>
+            <div class="tl-desc">Phụ huynh tăng mạnh tìm kiếm gói khám nhi, tiêm vaccine, kiểm tra mắt/răng cho con trước khai trường. VNVC và các phòng khám nhi run campaign "Back to School" packages mỗi năm.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-month">24–27/9 · SECC TPHCM</div>
+            <div class="tl-title">Pharmedi Vietnam 2025 (Lần thứ 20)</div>
+            <div class="tl-desc">500+ booths trên 15,000 m², tổ chức bởi Informa Markets/GLOEX. Sự kiện B2B lớn nhất ngành dược phẩm VN. Brands activate mạnh trước và trong sự kiện.</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="reg-box">
+          <h4>⚠ Regulatory Deadline – Pitch Wedge quan trọng nhất</h4>
+          <ul>
+            <li><strong>Luật Dược sửa đổi + Nghị định 163</strong> (hiệu lực 1/7/2025): siết chặt quy định quảng cáo OTC, yêu cầu pre-approval nội dung từ Bộ Y tế.</li>
+            <li><strong>Luật Quảng cáo 75/2025/QH15</strong> (hiệu lực 1/1/2026): KOL/KOC bị quy trách nhiệm cá nhân về nội dung y tế, có rule bắt buộc xoá content vi phạm trong 24h.</li>
+            <li><strong>Framing khi pitch:</strong> "Trước 1/1/2026, bạn cần một agency có SOP compliance – không phải học sau khi bị phạt."</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top: 18px;">
+          <span class="card-tag tag-pharma">Trend Content 2025</span>
+          <h3>Doctor-KOL > Hospital Page</h3>
+          <p>Theo data social listening, top 10 bác sĩ TikTok đạt lượt view <strong>gấp ~10 lần</strong> top 10 fanpage bệnh viện. Top 10 bác sĩ Facebook có following <strong>gấp ~1.5 lần</strong> top 10 bệnh viện. Các bệnh viện đang dịch chuyển sang <em>doctor-as-KOL strategy</em> thay vì chỉ đăng nội dung thương hiệu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: KÊNH & BUDGET -->
+<section id="kenh">
+  <div class="container">
+    <div class="section-label">Kênh & Budget</div>
+    <h2>Channel mix và ước tính ngân sách</h2>
+    <p class="section-intro">Mức độ sử dụng từng kênh phân hóa rõ giữa pharma OTC, bệnh viện và MNC Rx. Budget ước tính dựa trên báo cáo tài chính public và data thị trường.</p>
+
+    <table class="channel-table">
+      <thead>
+        <tr>
+          <th>Kênh MKT</th>
+          <th>OTC Pharma</th>
+          <th>Bệnh viện tư</th>
+          <th>MNC Rx</th>
+          <th>Ghi chú</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Facebook / Meta Ads</td>
+          <td><span class="dot-high">●●●</span></td>
+          <td><span class="dot-high">●●●</span></td>
+          <td><span class="dot-low">●○○</span></td>
+          <td>Kênh chính cho cả OTC lẫn bệnh viện. 89.6% internet users dùng Facebook</td>
+        </tr>
+        <tr>
+          <td>TikTok</td>
+          <td><span class="dot-med">●●○</span></td>
+          <td><span class="dot-high">●●●</span></td>
+          <td><span class="dot-low">●○○</span></td>
+          <td>Tâm Anh là case study thành công nhất. 80.9% internet users dùng TikTok</td>
+        </tr>
+        <tr>
+          <td>Zalo OA / ZNS</td>
+          <td><span class="dot-med">●●○</span></td>
+          <td><span class="dot-high">●●●</span></td>
+          <td><span class="dot-low">●○○</span></td>
+          <td>Critical cho appointment reminder + CRM bệnh nhân. 86.6% dùng Zalo</td>
+        </tr>
+        <tr>
+          <td>Google SEM / SEO</td>
+          <td><span class="dot-med">●●○</span></td>
+          <td><span class="dot-high">●●●</span></td>
+          <td><span class="dot-med">●●○</span></td>
+          <td>Người dùng search triệu chứng → appointment booking là funnel cực hiệu quả</td>
+        </tr>
+        <tr>
+          <td>YouTube</td>
+          <td><span class="dot-med">●●○</span></td>
+          <td><span class="dot-high">●●●</span></td>
+          <td><span class="dot-med">●●○</span></td>
+          <td>FV dẫn đầu về long-form expert content. Vinmec push doctor podcast</td>
+        </tr>
+        <tr>
+          <td>KOL / Doctor-KOL</td>
+          <td><span class="dot-high">●●●</span></td>
+          <td><span class="dot-high">●●●</span></td>
+          <td><span class="dot-low">●○○</span></td>
+          <td>Cẩn thận với Luật Quảng cáo 75/2025 hiệu lực 1/1/2026</td>
+        </tr>
+        <tr>
+          <td>Pharmacy chain (Long Châu, Pharmacity)</td>
+          <td><span class="dot-high">●●●</span></td>
+          <td><span class="dot-low">●○○</span></td>
+          <td><span class="dot-med">●●○</span></td>
+          <td>OTC: co-marketing với pharmacy chain là kênh quan trọng</td>
+        </tr>
+        <tr>
+          <td>HCP / Medical congress</td>
+          <td><span class="dot-low">●○○</span></td>
+          <td><span class="dot-low">●○○</span></td>
+          <td><span class="dot-high">●●●</span></td>
+          <td>Kênh duy nhất hợp pháp cho Rx. Tài trợ hội nghị, CML, e-detailing</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top: 40px;">
+      <h3 style="font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--navy); margin-bottom:20px;">Ước tính ngân sách MKT hàng năm</h3>
+      <div class="budget-bars">
+        <div class="budget-item">
+          <div class="budget-label">
+            <span class="budget-name">Traphaco (OTC pharma, aggressive spender)</span>
+            <span class="budget-range">~170–190 tỷ VND/năm</span>
+          </div>
+          <div class="budget-bar-wrap"><div class="budget-bar" style="width:72%"></div></div>
+          <div class="budget-note">~7–8% revenue. Nguồn: Báo cáo tài chính Q3/2024 và H1/2024 Traphaco</div>
+        </div>
+        <div class="budget-item">
+          <div class="budget-label">
+            <span class="budget-name">DHG Pharma (thận trọng, tập trung trade promotion)</span>
+            <span class="budget-range">~192 tỷ VND+ selling expense (Q1/2024)</span>
+          </div>
+          <div class="budget-bar-wrap"><div class="budget-bar" style="width:78%"></div></div>
+          <div class="budget-note">~16–18% selling expense / revenue. Phần lớn là trade channel, không phải brand ads</div>
+        </div>
+        <div class="budget-item">
+          <div class="budget-label">
+            <span class="budget-name">MNC Consumer arm (Abbott, GSK, Sanofi consumer)</span>
+            <span class="budget-range">Ước tính lớn hơn domestic – không công khai</span>
+          </div>
+          <div class="budget-bar-wrap"><div class="budget-bar" style="width:88%"></div></div>
+          <div class="budget-note">Budget global được phân bổ xuống market VN. Thường quyết định theo brand calendar quốc tế</div>
+        </div>
+        <div class="budget-item">
+          <div class="budget-label">
+            <span class="budget-name">Vinmec / Tâm Anh (bệnh viện premium, loss-tolerant)</span>
+            <span class="budget-range">Không công khai – đầu tư nặng vào brand</span>
+          </div>
+          <div class="budget-bar-wrap"><div class="budget-bar" style="width:65%"></div></div>
+          <div class="budget-note">Vinmec vẫn lỗ nhưng Vingroup tiếp tục bơm vốn; Tâm Anh đầu tư mạnh TikTok + production</div>
+        </div>
+        <div class="budget-item">
+          <div class="budget-label">
+            <span class="budget-name">Bệnh viện mid-size / phòng khám (Hồng Ngọc, MEDLATEC)</span>
+            <span class="budget-range">Lean budget – ưu tiên performance ROI</span>
+          </div>
+          <div class="budget-bar-wrap"><div class="budget-bar" style="width:42%"></div></div>
+          <div class="budget-note">Chi phí ít hơn nhưng pressure ROI cao hơn. Pitch efficiency và MMM sẽ hiệu quả hơn brand awareness</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: APPROACH PLAN -->
+<section id="approach">
+  <div class="container">
+    <div class="section-label">BD Approach Q3</div>
+    <h2>Plan approach cụ thể cho PMAX</h2>
+    <p class="section-intro">5 bước approach được phân theo segment và timing, dựa trên insight thị trường bên trên.</p>
+
+    <div class="reco-grid">
+      <div class="reco-card">
+        <div class="reco-num">01</div>
+        <div><span class="segment-badge sb-otc">OTC + VNVC</span></div>
+        <h4>Pitch performance + KOL + Zalo CRM cho OTC pharma ngay trong tháng 6–7</h4>
+        <p>Target: Traphaco (brand mới Bexita), VNVC (vaccine dengue/RSV), DHG (NattoEnzym). Hook: "Q3 là mùa dengue – đây là window 8 tuần để capture demand trước khi campaign phí tăng." Offer audit channel mix miễn phí trước khi pitch retainer.</p>
+        <div><span class="reco-chip">Timing: June–July</span></div>
+      </div>
+
+      <div class="reco-card">
+        <div class="reco-num">02</div>
+        <div><span class="segment-badge sb-hosp">Bệnh viện</span></div>
+        <h4>Lead gen + booking funnel + doctor-KOL cho bệnh viện tư</h4>
+        <p>Target: Tâm Anh (TikTok optimization), Hoàn Mỹ (Google Maps + local SEO), MEDLATEC (Zalo booking). Hook: "Appointment booking rate của bệnh nhân online đang bị leak ở bước nào trong funnel?" Pitch diagnostic session thay vì proposal ngay.</p>
+        <div><span class="reco-chip">Timing: July–August</span></div>
+      </div>
+
+      <div class="reco-card">
+        <div class="reco-num">03</div>
+        <div><span class="segment-badge sb-rx">Compliance Pitch</span></div>
+        <h4>Dùng Luật Quảng cáo 75/2025 làm lý do pitch "cấp bách" cho tất cả segment</h4>
+        <p>Luật hiệu lực 1/1/2026. Tất cả KOL healthcare phải chịu trách nhiệm cá nhân. Nếu họ chưa có agency với SOP compliance rõ ràng, họ đang risk. Email hook: "Agency của bạn đã có quy trình 24h takedown chưa?" — áp dụng được cho cả pharma lẫn bệnh viện.</p>
+        <div><span class="reco-chip">Timing: August–Sept</span></div>
+      </div>
+
+      <div class="reco-card">
+        <div class="reco-num">04</div>
+        <div><span class="segment-badge sb-hosp">Events</span></div>
+        <h4>Xuất hiện tại Medi-Pharm Expo (31/7) và Pharmedi (24/9)</h4>
+        <p>Không cần booth – attend networking sessions và side events. Chuẩn bị 1 case study healthcare (dù chỉ là pilot nhỏ) để show track record. Nếu PMAX chưa có healthcare case, cân nhắc làm free pilot 4 tuần với 1 phòng khám nhỏ để có data trước Q3.</p>
+        <div><span class="reco-chip">Action ngay</span></div>
+      </div>
+
+      <div class="reco-card">
+        <div class="reco-num">05</div>
+        <div><span class="segment-badge sb-otc">Capability</span></div>
+        <h4>Build healthcare-specific capability trước khi pitch</h4>
+        <p>Hai điểm yếu cần giải quyết: (1) Chưa có healthcare case study public. (2) Chưa có medical content SOP (doctor sign-off workflow, KOL compliance contracts). Giải pháp nhanh: partnership với HEDIMA hoặc UPmed, hoặc hire 1 người có background y tế vào content team.</p>
+        <div><span class="reco-chip">Internal prep</span></div>
+      </div>
+    </div>
+
+    <div class="caveat">
+      <strong>Lưu ý về độ chính xác số liệu:</strong> Budget ước tính derived từ selling expense quarterly reports và ratio industry – không phải con số advertising riêng biệt. Cần verify lại từ audited annual reports trước khi dùng trong proposal. Budget MNC và bệnh viện tư không được công khai – dùng như ballpark để qualify prospect, không quote cụ thể. Số liệu quy mô thị trường vary theo research house (TechSci, Fitch, Fortune BI, IMARC).
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: SOURCES -->
+<section>
+  <div class="container">
+    <div class="section-label">Nguồn tham khảo</div>
+    <h2>Trích nguồn</h2>
+    <ul class="sources-list">
+      <li>Fortune Business Insights – <em>Vietnam Pharmaceutical Market Size, 2024–2032</em> (CAGR 9.33%, $7.94B → $16.03B)</li>
+      <li>TechSci Research – <em>Vietnam Pharmaceutical Market Forecast 2030</em> ($7.60B → $12.12B, CAGR 7.96%)</li>
+      <li>Fitch Solutions – <em>Vietnam Pharma &amp; Healthcare Report</em> ($6B 2023 → $11.6B 2033)</li>
+      <li>DataReportal / We Are Social – <em>Digital 2025: Vietnam</em> (Facebook 89.6%, Zalo 86.6%, TikTok 80.9%)</li>
+      <li>ResearchAndMarkets – <em>Vietnam Digital Ad Spend Databook Q1 2026</em> (10/2/2026: $4.94B 2025 → $7.29B 2029)</li>
+      <li>Vietnam News Agency (VNA) – <em>Dengue fever statistics TPHCM Jan–May 2025</em> (7,398 ca, +136% YoY, 16/5/2025)</li>
+      <li>Reuters / Biospectrum Asia – <em>Sanofi–VNVC vaccine plant groundbreaking, Long An</em> (27/5/2025, vốn ~2,000 tỷ VND)</li>
+      <li>Thomson Medical / FV Hospital – <em>Acquisition completion announcement 2023</em> ($381.4M)</li>
+      <li>GE HealthCare Press Release – <em>Partnership with Bệnh viện Tâm Anh for AI diagnostic tools</em> (5/2024)</li>
+      <li>Thời báo Tài chính Việt Nam – <em>Imexpharm 2024 Annual Revenue 2,205 tỷ VND, EBITDA +12.3%</em></li>
+      <li>Doanhnghiephoinhap.vn – <em>Traphaco doanh thu hàng nghìn tỷ từ thuốc bổ, số thuế nộp Nhà nước</em></li>
+      <li>YouNet Media – <em>Marketing Y tế: Đầu tư vào YouTube &amp; TikTok cho bệnh viện</em> (younetmedia.com/marketing-y-te)</li>
+      <li>Vietnam Report – <em>Top Healthcare Brands Vietnam 2025 Ranking</em> (VNVC "Best Quality in Vietnam")</li>
+      <li>Quốc hội Việt Nam – <em>Luật Quảng cáo sửa đổi 75/2025/QH15</em> (hiệu lực 1/1/2026)</li>
+      <li>Chính phủ Việt Nam – <em>Nghị định 163/2025 hướng dẫn Luật Dược sửa đổi</em> (hiệu lực 1/7/2025)</li>
+      <li>Informa Markets / GLOEX – <em>Pharmedi Vietnam 2025, lần thứ 20</em> (SECC TPHCM, 24–27/9/2025)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Vietnam Healthcare Vertical – Q3 Marketing Intelligence 2025</strong><br>
+  Prepared for PMAX Agency BD Approach Planning · Tổng hợp từ public data, báo cáo tài chính và nguồn thị trường<br>
+  <em>Số liệu budget mang tính ước tính – verify từ annual reports trước khi dùng trong proposal chính thức.</em>
+</footer>
+
+<script>
+  // Animate budget bars on scroll
+  const bars = document.querySelectorAll('.budget-bar');
+  const targets = Array.from(bars).map(b => b.style.width);
+  bars.forEach(b => b.style.width = '0%');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        const idx = Array.from(bars).indexOf(bar);
+        setTimeout(() => { bar.style.width = targets[idx]; }, idx * 120);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  bars.forEach(b => observer.observe(b));
+
+  // Animate hero stats
+  document.querySelectorAll('.hero-stat').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = `opacity 0.5s ease ${i*0.1}s, transform 0.5s ease ${i*0.1}s`;
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 300 + i * 100);
+  });
+</script>
+</body>
+</html>
