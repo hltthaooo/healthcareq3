@@ -276,22 +276,32 @@
   }
 
   /* ── SOURCES ── */
-  .sources-list { list-style: none; display: flex; flex-direction: column; gap: 8px; counter-reset: src; }
+  .sources-list { list-style: none; display: flex; flex-direction: column; gap: 10px; counter-reset: src; }
   .sources-list li {
     counter-increment: src;
-    font-size: 0.8rem; color: var(--muted);
-    padding-left: 28px; position: relative;
+    font-size: 0.82rem; color: var(--muted);
+    padding-left: 32px; position: relative;
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 12px 16px 12px 40px;
+    transition: border-color .2s, box-shadow .2s;
   }
+  .sources-list li:hover { border-color: var(--teal); box-shadow: 0 2px 12px rgba(13,148,136,0.1); }
   .sources-list li::before {
     content: counter(src);
-    position: absolute; left: 0;
+    position: absolute; left: 12px; top: 12px;
     background: var(--sky-dark); color: var(--navy-mid);
     font-weight: 700; font-size: 0.68rem;
     width: 18px; height: 18px; display: flex; align-items: center; justify-content: center;
-    border-radius: 4px; top: 1px;
+    border-radius: 4px;
   }
-  .sources-list a { color: var(--teal); text-decoration: none; }
-  .sources-list a:hover { text-decoration: underline; }
+  .sources-list a {
+    color: var(--teal); text-decoration: none; font-weight: 500;
+    display: inline-flex; align-items: center; gap: 4px;
+  }
+  .sources-list a::after { content: '↗'; font-size: 0.7rem; opacity: 0.7; }
+  .sources-list a:hover { text-decoration: underline; color: var(--navy); }
+  .src-title { display: block; color: var(--navy); font-weight: 600; margin-bottom: 2px; }
+  .src-meta { font-size: 0.76rem; color: var(--muted); }
 
   /* ── FOOTER ── */
   footer {
@@ -301,7 +311,14 @@
   }
   footer strong { color: rgba(255,255,255,0.7); }
 
-  /* ── BADGE ── */
+  .tag-existing { background: #FEE2E2; color: #991B1B; }
+  .existing-banner {
+    background: linear-gradient(90deg, #FEF2F2, #FFF5F5);
+    border: 1.5px solid #FCA5A5; border-radius: 8px;
+    padding: 8px 14px; margin-bottom: 12px;
+    font-size: 0.75rem; font-weight: 700; color: #991B1B;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
   .segment-badge {
     display: inline-flex; align-items: center; gap: 6px;
     font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
@@ -511,6 +528,30 @@
           <span class="brand-pill">Disease awareness</span>
         </div>
       </div>
+
+      <div class="card">
+        <span class="card-tag tag-pharma">Domestic · Thảo dược & TPCN</span>
+        <h3>OPC, Pymepharco, Bidiphar</h3>
+        <div class="rev">Domestic mid-size – đang push OTC consumer marketing</div>
+        <p>OPC (thảo dược, TP.HCM) và Pymepharco (Stada-backed, Quy Nhơn) đang tăng tỷ trọng OTC và đầu tư digital. Bidiphar (Bình Định) có nhà máy high-tech Nhơn Hội, mạnh về oncology injectables – ít mass media hơn. Pitch angle: digital performance để cạnh tranh với DHG/Traphaco trong OTC.</p>
+        <div class="brands"><span class="brand-pill">OPC Pharma</span><span class="brand-pill">Pymepharco</span><span class="brand-pill">Bidiphar</span></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-pharma">Chuỗi nhà thuốc · Retail Pharma</span>
+        <h3>Long Châu (FPT Retail), Pharmacity, An Khang</h3>
+        <div class="rev">Pharmacy chain – digital marketing rất active</div>
+        <p>Long Châu (1,700+ cửa hàng, FPT Retail) và Pharmacity (1,000+ stores) là kênh phân phối lẫn advertiser độc lập. Cả hai đang push app-based loyalty, Zalo OA, Google SEM cho khách hàng đặt thuốc online. An Khang (MWG) cũng tăng digital budget. Đây là target B2B2C thú vị.</p>
+        <div class="brands"><span class="brand-pill">Long Châu</span><span class="brand-pill">Pharmacity</span><span class="brand-pill">An Khang</span><span class="brand-pill">App loyalty</span></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-hybrid">Consumer Health · FMCG-pharma</span>
+        <h3>Daewoong Pharmaceutical, Bayer Consumer, Haleon</h3>
+        <div class="rev">OTC consumer brands cạnh tranh trực tiếp shelf space</div>
+        <p>Daewoong (Hàn Quốc, cổ đông chiến lược Traphaco) đang push riêng thương hiệu Moto, Stilux tại VN. Bayer Consumer Health (Bepanthen, Elevit, Aspirin) và Haleon (Sensodyne, Panadol, Centrum – tách từ GSK) có budget digital lớn, cần KOL và performance. Pitch approach: tương tự FMCG nhưng compliance y tế cao hơn.</p>
+        <div class="brands"><span class="brand-pill">Panadol</span><span class="brand-pill">Centrum</span><span class="brand-pill">Bepanthen</span><span class="brand-pill">Elevit</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -548,11 +589,12 @@
       </div>
 
       <div class="card">
-        <span class="card-tag tag-hospital">Hệ thống · Lớn nhất VN</span>
+        <div class="existing-banner">🔒 Existing PMAX Client – không approach</div>
+        <span class="card-tag tag-existing">Hệ thống · Lớn nhất VN</span>
         <h3>Hoàn Mỹ (Clermont Group)</h3>
         <div class="rev">14 bệnh viện + 6 phòng khám trên toàn quốc</div>
-        <p>Mạng lưới lớn nhất VN. Budget phân tán theo từng cơ sở. Chiến lược MKT lean về local targeting + Google Maps + SEO + Zalo OA. Không có TikTok presence mạnh. Cơ hội lớn ở digital performance cho appointment booking.</p>
-        <div class="brands"><span class="brand-pill">Google Maps</span><span class="brand-pill">SEO</span><span class="brand-pill">Local ads</span></div>
+        <p>Mạng lưới bệnh viện tư lớn nhất VN theo số cơ sở. Đang là khách hàng của PMAX – dùng để hiểu benchmark ngành và làm reference case khi pitch các hospital group khác.</p>
+        <div class="brands"><span class="brand-pill">Reference case</span><span class="brand-pill">Benchmark</span></div>
       </div>
 
       <div class="card">
@@ -569,6 +611,31 @@
         <div class="rev">Phòng khám + xét nghiệm + tầm soát bệnh</div>
         <p>MEDLATEC chuyên xét nghiệm tại nhà + đặt lịch online – cần SEO, SEM và Zalo booking funnel mạnh. CarePlus: clinic chain đa chuyên khoa. City International Hospital: high-end tại TPHCM. Cả 3 đều cần lead gen + patient acquisition.</p>
         <div class="brands"><span class="brand-pill">Zalo OA</span><span class="brand-pill">Booking funnel</span><span class="brand-pill">SEO/SEM</span></div>
+      </div>
+
+      <div class="card">
+        <div class="existing-banner">🔒 Existing PMAX Client (Mắt Sài Gòn) – không approach</div>
+        <span class="card-tag tag-hospital">Mắt · Răng · Chuyên khoa</span>
+        <h3>Nha khoa Paris, DND, IDP <span style="color:var(--muted);font-weight:400;font-size:0.85rem;">+ Mắt Sài Gòn*</span></h3>
+        <div class="rev">Specialty clinics – tăng trưởng nhanh, digital-heavy</div>
+        <p>Nha khoa Paris có hàng trăm cơ sở, budget Facebook/TikTok lớn, cần lead gen theo khu vực. DND cần Google SEM + retargeting. IDP (thẩm mỹ) push TikTok/KOC mạnh. <em>Mắt Sài Gòn đang là client PMAX – dùng làm benchmark và reference case khi pitch nhóm eye-care khác.</em></p>
+        <div class="brands"><span class="brand-pill">Lead gen local</span><span class="brand-pill">TikTok KOC</span><span class="brand-pill">Google SEM</span></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-hospital">Thẩm mỹ y tế · Hot vertical</span>
+        <h3>Bệnh viện Thẩm mỹ Hàn Quốc JW, Kangnam</h3>
+        <div class="rev">Thẩm mỹ viện quy mô bệnh viện – budget MKT rất lớn</div>
+        <p>JW và Kangnam là 2 thương hiệu thẩm mỹ y tế Hàn Quốc lớn nhất tại VN. Chi budget khủng vào TikTok, Instagram, KOC beauty-health, booking funnel và retargeting. Đây là nhóm có CPL cao nhưng LTV khách hàng cũng rất lớn – cần agency hiểu cả performance lẫn brand safety.</p>
+        <div class="brands"><span class="brand-pill">TikTok</span><span class="brand-pill">KOC</span><span class="brand-pill">Retargeting</span><span class="brand-pill">Instagram</span></div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-hospital">Sức khoẻ doanh nghiệp · B2B</span>
+        <h3>Phòng khám Quốc tế Columbia Asia, Raffles</h3>
+        <div class="rev">Target expat + corporate health insurance packages</div>
+        <p>Columbia Asia (Malaysia-backed) và Raffles Medical (Singapore) phục vụ expat community và corporate wellness packages. Budget MKT modest nhưng rất selective. Cần LinkedIn B2B, Google SEM tiếng Anh và Zalo cho corporate HR. Pitch angle: employer branding + employee wellness.</p>
+        <div class="brands"><span class="brand-pill">LinkedIn B2B</span><span class="brand-pill">English SEM</span><span class="brand-pill">Corporate HR</span></div>
       </div>
     </div>
   </div>
@@ -779,7 +846,7 @@
         <div class="reco-num">02</div>
         <div><span class="segment-badge sb-hosp">Bệnh viện</span></div>
         <h4>Lead gen + booking funnel + doctor-KOL cho bệnh viện tư</h4>
-        <p>Target: Tâm Anh (TikTok optimization), Hoàn Mỹ (Google Maps + local SEO), MEDLATEC (Zalo booking). Hook: "Appointment booking rate của bệnh nhân online đang bị leak ở bước nào trong funnel?" Pitch diagnostic session thay vì proposal ngay.</p>
+        <p>Target: Tâm Anh (TikTok optimization), FV Hospital (YouTube + expat lead gen), MEDLATEC (Zalo booking funnel), Hồng Ngọc (brand film + performance). Hook: "Appointment booking rate của bệnh nhân online đang bị leak ở bước nào trong funnel?" Pitch diagnostic session thay vì proposal ngay.</p>
         <div><span class="reco-chip">Timing: July–August</span></div>
       </div>
 
@@ -820,22 +887,86 @@
     <div class="section-label">Nguồn tham khảo</div>
     <h2>Trích nguồn</h2>
     <ul class="sources-list">
-      <li>Fortune Business Insights – <em>Vietnam Pharmaceutical Market Size, 2024–2032</em> (CAGR 9.33%, $7.94B → $16.03B)</li>
-      <li>TechSci Research – <em>Vietnam Pharmaceutical Market Forecast 2030</em> ($7.60B → $12.12B, CAGR 7.96%)</li>
-      <li>Fitch Solutions – <em>Vietnam Pharma &amp; Healthcare Report</em> ($6B 2023 → $11.6B 2033)</li>
-      <li>DataReportal / We Are Social – <em>Digital 2025: Vietnam</em> (Facebook 89.6%, Zalo 86.6%, TikTok 80.9%)</li>
-      <li>ResearchAndMarkets – <em>Vietnam Digital Ad Spend Databook Q1 2026</em> (10/2/2026: $4.94B 2025 → $7.29B 2029)</li>
-      <li>Vietnam News Agency (VNA) – <em>Dengue fever statistics TPHCM Jan–May 2025</em> (7,398 ca, +136% YoY, 16/5/2025)</li>
-      <li>Reuters / Biospectrum Asia – <em>Sanofi–VNVC vaccine plant groundbreaking, Long An</em> (27/5/2025, vốn ~2,000 tỷ VND)</li>
-      <li>Thomson Medical / FV Hospital – <em>Acquisition completion announcement 2023</em> ($381.4M)</li>
-      <li>GE HealthCare Press Release – <em>Partnership with Bệnh viện Tâm Anh for AI diagnostic tools</em> (5/2024)</li>
-      <li>Thời báo Tài chính Việt Nam – <em>Imexpharm 2024 Annual Revenue 2,205 tỷ VND, EBITDA +12.3%</em></li>
-      <li>Doanhnghiephoinhap.vn – <em>Traphaco doanh thu hàng nghìn tỷ từ thuốc bổ, số thuế nộp Nhà nước</em></li>
-      <li>YouNet Media – <em>Marketing Y tế: Đầu tư vào YouTube &amp; TikTok cho bệnh viện</em> (younetmedia.com/marketing-y-te)</li>
-      <li>Vietnam Report – <em>Top Healthcare Brands Vietnam 2025 Ranking</em> (VNVC "Best Quality in Vietnam")</li>
-      <li>Quốc hội Việt Nam – <em>Luật Quảng cáo sửa đổi 75/2025/QH15</em> (hiệu lực 1/1/2026)</li>
-      <li>Chính phủ Việt Nam – <em>Nghị định 163/2025 hướng dẫn Luật Dược sửa đổi</em> (hiệu lực 1/7/2025)</li>
-      <li>Informa Markets / GLOEX – <em>Pharmedi Vietnam 2025, lần thứ 20</em> (SECC TPHCM, 24–27/9/2025)</li>
+      <li>
+        <span class="src-title">Fortune Business Insights – Vietnam Pharmaceutical Market Size, 2024–2032</span>
+        <span class="src-meta">CAGR 9.33%, $7.94B → $16.03B · </span>
+        <a href="https://www.fortunebusinessinsights.com/vietnam-pharmaceutical-market-107124" target="_blank" rel="noopener">fortunebusinessinsights.com</a>
+      </li>
+      <li>
+        <span class="src-title">TechSci Research – Vietnam Pharmaceutical Market Forecast 2030</span>
+        <span class="src-meta">$7.60B → $12.12B, CAGR 7.96% · </span>
+        <a href="https://www.techsciresearch.com/report/vietnam-pharmaceutical-market/3938.html" target="_blank" rel="noopener">techsciresearch.com</a>
+      </li>
+      <li>
+        <span class="src-title">DataReportal / We Are Social – Digital 2025: Vietnam</span>
+        <span class="src-meta">Facebook 89.6%, Zalo 86.6%, TikTok 80.9% · </span>
+        <a href="https://datareportal.com/reports/digital-2025-vietnam" target="_blank" rel="noopener">datareportal.com</a>
+      </li>
+      <li>
+        <span class="src-title">Vietnam News Agency – Dengue fever TPHCM Jan–May 2025</span>
+        <span class="src-meta">7,398 ca, +136% YoY, 16/5/2025 · </span>
+        <a href="https://vnexpress.net/sot-xuat-huyet-tang-manh-tai-tp-hcm-4755000.html" target="_blank" rel="noopener">vnexpress.net</a>
+      </li>
+      <li>
+        <span class="src-title">Reuters – Sanofi–VNVC vaccine plant groundbreaking, Long An</span>
+        <span class="src-meta">27/5/2025, vốn ~2,000 tỷ VND (~$77M) · </span>
+        <a href="https://www.reuters.com/business/healthcare-pharmaceuticals/sanofi-vietnam-sign-vaccine-deal-during-macron-visit-2025-05-26/" target="_blank" rel="noopener">reuters.com</a>
+      </li>
+      <li>
+        <span class="src-title">Thời báo Tài chính Việt Nam – Imexpharm 2024 kết quả kinh doanh</span>
+        <span class="src-meta">Doanh thu 2,205 tỷ VND, EBITDA +12.3% · </span>
+        <a href="https://thoibaotaichinhvietnam.vn/imexpharm-tang-truong-kha-quan-nam-2024-doanh-thu-thuan-2205-ty-dong-ebitda-tang-123-169183.html" target="_blank" rel="noopener">thoibaotaichinhvietnam.vn</a>
+      </li>
+      <li>
+        <span class="src-title">Doanhnghiephoinhap.vn – Traphaco doanh thu từ thuốc bổ và số thuế nộp Nhà nước</span>
+        <span class="src-meta">Revenue ~2,300 tỷ VND, advertising expense ~7–8% · </span>
+        <a href="https://doanhnghiephoinhap.vn/traphaco-dat-doanh-thu-hang-nghin-ty-dong-tu-ban-thuoc-bo-he-lo-so-thue-phai-nop-nha-nuoc-128092.html" target="_blank" rel="noopener">doanhnghiephoinhap.vn</a>
+      </li>
+      <li>
+        <span class="src-title">YouNet Media – Marketing Y tế: Đầu tư vào YouTube & TikTok cho bệnh viện</span>
+        <span class="src-meta">Doctor-KOL vs hospital page benchmark · </span>
+        <a href="https://younetmedia.com/marketing-y-te-dau-tu-vao-youtube-tiktok-dau-la-nhung-noi-dung-hieu-qua-ma-benh-vien-co-the-khai-thac/" target="_blank" rel="noopener">younetmedia.com</a>
+      </li>
+      <li>
+        <span class="src-title">GE HealthCare – Partnership announcement with Bệnh viện Tâm Anh</span>
+        <span class="src-meta">AI diagnostic tools, 5/2024 · </span>
+        <a href="https://www.gehealthcare.com/about/newsroom" target="_blank" rel="noopener">gehealthcare.com/newsroom</a>
+      </li>
+      <li>
+        <span class="src-title">Thomson Medical – FV Hospital acquisition completion 2023</span>
+        <span class="src-meta">$381.4M – largest SEA healthcare M&A since 2020 · </span>
+        <a href="https://www.thomsonmedical.com/investor-relations/news-announcements/" target="_blank" rel="noopener">thomsonmedical.com</a>
+      </li>
+      <li>
+        <span class="src-title">Vietnam Report – Top Healthcare Brands Vietnam 2025 Ranking</span>
+        <span class="src-meta">VNVC "Best Quality in Vietnam" · </span>
+        <a href="https://vietnamreport.net.vn/bao-cao-thuong-hieu/" target="_blank" rel="noopener">vietnamreport.net.vn</a>
+      </li>
+      <li>
+        <span class="src-title">ResearchAndMarkets – Vietnam Digital Ad Spend Databook Q1 2026</span>
+        <span class="src-meta">$4.94B (2025) → $7.29B (2029), CAGR 10.6% · </span>
+        <a href="https://www.researchandmarkets.com/reports/vietnam-digital-advertising" target="_blank" rel="noopener">researchandmarkets.com</a>
+      </li>
+      <li>
+        <span class="src-title">Quốc hội Việt Nam – Luật Quảng cáo sửa đổi 75/2025/QH15</span>
+        <span class="src-meta">Hiệu lực 1/1/2026 – KOL/KOC cá nhân chịu trách nhiệm, 24h takedown · </span>
+        <a href="https://thuvienphapluat.vn/van-ban/Thuong-mai/Luat-75-2025-QH15-Sua-doi-Luat-Quang-cao-2012.aspx" target="_blank" rel="noopener">thuvienphapluat.vn</a>
+      </li>
+      <li>
+        <span class="src-title">Chính phủ Việt Nam – Nghị định 163/2025/NĐ-CP hướng dẫn Luật Dược sửa đổi</span>
+        <span class="src-meta">Hiệu lực 1/7/2025 – siết quảng cáo OTC, pre-approval Bộ Y tế · </span>
+        <a href="https://thuvienphapluat.vn/van-ban/The-thao-Y-te/Nghi-dinh-163-2025-ND-CP-huong-dan-Luat-Duoc.aspx" target="_blank" rel="noopener">thuvienphapluat.vn</a>
+      </li>
+      <li>
+        <span class="src-title">Informa Markets / GLOEX – Pharmedi Vietnam 2025 (Lần thứ 20)</span>
+        <span class="src-meta">SECC TPHCM, 24–27/9/2025, 500+ booths, 15,000 m² · </span>
+        <a href="https://www.pharmedi.com.vn/" target="_blank" rel="noopener">pharmedi.com.vn</a>
+      </li>
+      <li>
+        <span class="src-title">Vietnam Medi-Pharm Expo 2025 – Triển lãm Quốc tế Y Dược TPHCM</span>
+        <span class="src-meta">SECC TPHCM, 31/7–2/8/2025, 450+ exhibitors từ 22 quốc gia · </span>
+        <a href="https://medipharmexpo.vn/" target="_blank" rel="noopener">medipharmexpo.vn</a>
+      </li>
     </ul>
   </div>
 </section>
